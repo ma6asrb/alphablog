@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    ap @article
   end
   
   def index
