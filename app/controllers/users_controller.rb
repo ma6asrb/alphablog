@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welcome to the Alpha Blog #{@user.username}"
+      flash[:success] = "Welcome to the BMS Improvements Log #{@user.username}"
       redirect_to user_path(@user)
     else
       render 'new'
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:danger] = "User and all articles created by user have been deleted"
+    flash[:danger] = "User and all issues created by user have been deleted"
     redirect_to users_path
   end
   
