@@ -38,7 +38,14 @@ class ArticlesController < ApplicationController
   end
   
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    #@articles = Article.paginate(page: params[:page], per_page: 5)
+    if params[:search]
+      @articles = Article.search(params[:search]).order("created_at DESC")
+    else
+      @articles = Article.paginate(page: params[:page], per_page: 5)
+    end    
+    
+    
   end
   
   def destroy

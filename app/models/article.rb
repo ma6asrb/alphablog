@@ -8,4 +8,9 @@ class Article < ActiveRecord::Base
   validates :user_id, presence: true
   validates :category_id, presence: true
 
+
+  def self.search(search)
+    where("id = ? OR title LIKE ?", search.to_i, "%#{search}%") 
+  end
+
 end
