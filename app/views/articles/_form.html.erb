@@ -19,9 +19,40 @@
           <%= f.label :description %>
         </div>
         <div class="col-sm-10">
-          <%= f.text_area :description, rows:10, class: "form-control", placeholder: "Improvement / Problem Details", autofocus: true %>
+          <%= f.text_area :description, rows:10, class: "form-control", placeholder: "Improvement / Problem Details" %>
         </div>
       </div>
+      
+      
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :action %>
+        </div>
+        <div class="col-sm-10">
+          <%= f.text_area :action, rows:10, class: "form-control", placeholder: "Agreed Action" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label "Target Completion Date" %>
+        </div>        
+        <div class="row">
+          <div class='col-sm-6'>
+            <%= f.text_field :action_target_date, value: (@article.action_target_date.strftime('%d/%m/%Y') if @article.action_target_date), class: "custom_date_picker" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label "Action Owner" %>
+        </div>
+        <div class="col-sm-10">
+          <%= f.text_field :action_user, class: "form-control", placeholder: "Owner" %>
+        </div>
+      </div>      
+      
       
       
       <div class="form-hgroup">

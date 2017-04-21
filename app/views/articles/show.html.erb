@@ -25,10 +25,30 @@
   <br>
   <h4>Title: </h4><%= @article.title %>
   <br>
+
   <br>
-  <h4 class="left description"><string>Description:</string></h4>
+  <h4 class="left description">Description:</h4>
   <%= simple_format(@article.description) %>
   <br>
+
+  <br>
+  <h4 class="left description">Action:</h4>
+  <%= simple_format(@article.action) %>
+  <br>
+  
+
+  <br>
+  <h4 class="left description">Action Target Completion Date:</h4>
+  <%= @article.action_target_date.strftime("%d/%m/%Y") %>
+  <br>
+
+  <br>
+  <h4 class="left description">Action Owner:</h4>
+  <%= simple_format(@article.action_user) %>
+  <br>
+
+
+
   <strong>Category: </strong><%= @article.category.name %>
   <br><br>
 

@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+//= require bootstrap-datepicker
+
+
+$(function(){ 
+  
+  $('.custom_date_picker').datepicker({
+      format: "dd/mm/yyyy",
+      startDate: "<%= Time.new.strftime('%d/%m/%Y')%>",
+      todayHighlight: true
+  });  
+  
+});
+
