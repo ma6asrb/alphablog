@@ -1,4 +1,4 @@
-<h2 align="center"> Title: <%= @article.title %> </h2>
+<h2 align="center"> BMS Log ID: <%= @article.id %> </h2>
 
 
 <div class="well col-xs-8 col-xs-offset-2">
@@ -41,7 +41,10 @@
                                           data: {confirm: "Are you sure you want to delete the issue?"}, 
                                           class: "btn btn-xs btn-danger" %>
     <% end %>                                        
-    <%= link_to "View all", articles_path, class: "btn btn-xs btn-success"  %>  
+    <%= link_to "View all", articles_path, class: "btn btn-xs btn-success" %>
+    <% if logged_in? %>
+      <%= link_to "New Note", new_article_article_note_path(:article_id => @article.id), class: "btn btn-xs btn-warning" %>
+    <% end %>
   </div>
 </div>
 

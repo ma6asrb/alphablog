@@ -11,6 +11,14 @@
             </li>          
           </div>
         </div>
+        
+        <% if logged_in? %>
+          <div class="article-actions">
+            <%= link_to "Edit", edit_article_article_note_path(:article_id => @article.id, :id => note.id), class: "btn btn-xs btn-primary" %>
+          </div>
+        <% end %>
+        
+        
       </ul>
       </div>
   <% end %>
