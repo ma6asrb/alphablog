@@ -23,6 +23,18 @@
         </div>
       </div>
       
+      
+      <div class="form-hgroup">
+        <div class="row">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.collection_radio_buttons :category_id, Category.all, :id, :name do |cb| %>
+              <% cb.label(class: "radio-inline") {cb.radio_button(class: "radio-inline") + cb.text} %>
+            <% end %>
+          </div>
+        </div>
+      </div>      
+      
+      
       <div class="form-hgroup">
         <div class="col-sm-offset-2 col-sm-10">
           <%= f.submit(@article.new_record? ? "Create Issue" : "Update Issue", class: 'btn btn-primary btn-lg') %>

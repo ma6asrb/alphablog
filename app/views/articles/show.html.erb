@@ -22,9 +22,18 @@
     </ul>  
   <% end %>
 
+  <br>
+  <h4>Title: </h4><%= @article.title %>
+  <br>
+  <br>
   <h4 class="left description"><string>Description:</string></h4>
-  <hr>
   <%= simple_format(@article.description) %>
+  <br>
+  <strong>Category: </strong><%= @article.category.name %>
+  <br><br>
+
+
+
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
       <%= link_to "Edit", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
@@ -38,6 +47,9 @@
 
 
   
-
+<% if @article.article_notes.any? %>
+  <h2 class="col-xs-8 col-xs-offset-2">Notes</h2>
+  <p><%= render 'article_notes/article_note' %></p>
+<% end %>
 
 

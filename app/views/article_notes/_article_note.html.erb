@@ -1,0 +1,16 @@
+  <% @article.article_notes.each do |note| %>
+    <div class="well col-xs-8 col-xs-offset-2">
+      <ul class="listing">
+        <div class="row">
+          <div class="col-md-8">
+            <li class="note-body">
+              <Strong>Description: </Strong> <%= note.note %>
+            </li>
+            <li class="note-body">
+              <Strong>Author: </Strong> <%= note.user.username %>, <strong>Created on: </strong> <%= note.created_at.to_date %>
+            </li>          
+          </div>
+        </div>
+      </ul>
+      </div>
+  <% end %>
